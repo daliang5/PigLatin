@@ -6,4 +6,3 @@ star
 three
 eagle
 try
-obm

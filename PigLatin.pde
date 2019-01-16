@@ -9,6 +9,7 @@ public void setup()
 	{
 	  System.out.println(pigLatin(lines[i]));
 	}
+  
 }
 public void draw()
 {
@@ -29,25 +30,18 @@ public String pigLatin(String sWord)
 //precondition: sWord is a valid String of length greater than 0
 //postcondition: returns the pig latin equivalent of sWord
 {
-    String firstLetter = sWord.substring(0,1); //gets first letter
-  String exceptFirst = sWord.substring(1,sWord.length());
-  //System.out.println(exceptFirst);
-  
-   if(findFirstVowel(exceptFirst) >= -1 && (findFirstVowel(firstLetter) == 0)){
-    return sWord + "way"; 
-  }
-  	if(findFirstVowel(sWord) == -1){
-		return sWord + "ay";
-	} else {
-		return "ERROR!";
+  String firstLetter = sWord.substring(0,1); //gets first letter
+  int bob = findFirstVowel(sWord);
+
+   if(findFirstVowel(sWord) == -1)
+     return sWord + "ay";
+   if((findFirstVowel(firstLetter) == 0))
+     return sWord + "way"; 
+   if(sWord.substring(0,2).equals("qu"))
+     return sWord.substring(2) + "quay"; 
+   if(findFirstVowel(sWord) != -1)
+     return sWord.substring(bob) + sWord.substring(0,bob) + "ay";
+    else 
+		 return "ERROR!";
 	}
  
-}
-public boolean ifPure(String sWord){
-    String exceptFirst = sWord.substring(1,sWord.length());
-    
-    for(int i=0; i< exceptFirst.length(); i++){
-        if(findFirstVowel(exceptFirst) !=
-    }
-    
-}
